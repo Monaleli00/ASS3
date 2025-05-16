@@ -719,7 +719,7 @@ public class AboutLesothoDashboard {
         controls.getChildren().addAll(prevButton, playButton, pauseButton, stopButton, nextButton);
         VBox.setMargin(controls, new Insets(20, 0, 20, 0));
 
-        VBox container = new VBox(20, titleLabel, mediaView, controls); // Reduced spacing from 30 to 20
+        VBox container = new VBox(20, titleLabel, mediaView, controls); 
         container.setAlignment(Pos.CENTER);
 
         videoView.getChildren().add(container);
