@@ -259,9 +259,9 @@ public class AboutLesothoDashboard {
 
                             Label musicLabel = new Label(file.getFileName().toString().replace(".mp3", ""));
                             musicLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px; -fx-cursor: hand; " +
-                                    "-fx-padding: 8; -fx-background-color: #666666; -fx-background-radius: 5;"); // Lighter background
+                                    "-fx-padding: 8; -fx-background-color: #666666; -fx-background-radius: 5;"); 
                             musicLabel.setOnMouseEntered(e -> musicLabel.setStyle("-fx-text-fill: #FFD700; -fx-font-size: 16px; -fx-cursor: hand; " +
-                                    "-fx-padding: 8; -fx-background-color: #777777; -fx-background-radius: 5;")); // Lighter hover
+                                    "-fx-padding: 8; -fx-background-color: #777777; -fx-background-radius: 5;")); 
                             musicLabel.setOnMouseExited(e -> musicLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px; -fx-cursor: hand; " +
                                     "-fx-padding: 8; -fx-background-color: #666666; -fx-background-radius: 5;"));
                             musicLabel.setOnMouseClicked(e -> {
@@ -450,7 +450,7 @@ public class AboutLesothoDashboard {
                             mediaView.setOnMouseEntered(e -> mediaView.setStyle("-fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(255,215,0,0.8), 10, 0, 0, 0);"));
                             mediaView.setOnMouseExited(e -> mediaView.setStyle("-fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);"));
 
-                            // Click handler for thumbnail
+                            
                             mediaView.setOnMouseClicked(e -> {
                                 stopAllMediaExceptHistory();
                                 currentVideoIndex = videoPlayers.indexOf(player);
@@ -655,7 +655,7 @@ public class AboutLesothoDashboard {
         VBox videoView = new VBox(30);
         videoView.setAlignment(Pos.CENTER);
         videoView.setStyle("-fx-background-color: rgba(54, 54, 54, 0.85); -fx-padding: 40;");
-        videoView.setPrefHeight(700); // Increased height to accommodate controls
+        videoView.setPrefHeight(700); 
 
         String videoName = currentVideoPlayer.getMedia().getSource()
                 .replace(".mp4", "")
@@ -667,11 +667,11 @@ public class AboutLesothoDashboard {
         titleLabel.setTextFill(Color.GOLD);
 
         MediaView mediaView = new MediaView(currentVideoPlayer);
-        mediaView.setFitWidth(800); // Reduced from 900
-        mediaView.setFitHeight(450); // Reduced from 500
+        mediaView.setFitWidth(800); 
+        mediaView.setFitHeight(450);
         mediaView.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 20, 0, 0, 0);");
 
-        // Add click handler to toggle play/pause
+        
         mediaView.setOnMouseClicked(e -> {
             if (currentVideoPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
                 currentVideoPlayer.pause();
@@ -703,7 +703,7 @@ public class AboutLesothoDashboard {
         stopButton.setOnAction(e -> {
             currentVideoPlayer.stop();
             view.getChildren().clear();
-            createView(); // Return to normal view
+            createView(); 
         });
 
         Button nextButton = createMediaButton("Next", "#2196F3");
